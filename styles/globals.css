@@ -1,0 +1,573 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --font-sans: 'Geist', 'Geist Fallback';
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ============================================
+   ENVELOPE ANIMATIONS
+   ============================================ */
+.envelope {
+  position: relative;
+}
+
+.envelope .flap {
+  transform-origin: top center;
+  transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: transform;
+}
+
+.envelope.open .flap {
+  transform: rotateX(-160deg);
+}
+
+/* ============================================
+   POLAROID CARD STYLES
+   ============================================ */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.polaroid-card {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  padding: 12px;
+  padding-bottom: 48px;
+  border-radius: 4px;
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+.dark .polaroid-card {
+  background: #f5f5f5;
+}
+
+.polaroid-card:hover {
+  transform: translateY(-8px) rotate(0deg) !important;
+  box-shadow: 
+    0 12px 24px rgba(0, 0, 0, 0.15),
+    0 20px 40px rgba(0, 0, 0, 0.12);
+  z-index: 100 !important;
+}
+
+.polaroid-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.polaroid-photo-wrapper {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.02) 0%,
+    rgba(0, 0, 0, 0.01) 100%
+  );
+  border-radius: 2px;
+  position: relative;
+}
+
+.polaroid-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.polaroid-card:hover .polaroid-photo {
+  transform: scale(1.08);
+}
+
+.polaroid-caption-area {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+}
+
+.polaroid-caption-text {
+  font-family: 'Brush Script MT', 'Comic Sans MS', 'Bradley Hand', cursive, sans-serif;
+  font-size: 0.875rem;
+  color: #4a4a4a;
+  text-align: center;
+  line-height: 1.3;
+  padding: 0 4px;
+}
+
+.dark .polaroid-caption-text {
+  color: #2a2a2a;
+}
+
+/* ============================================
+   POLAROID REVEAL ANIMATION
+   ============================================ */
+@keyframes polaroid-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.8) rotateX(-15deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1.05) rotateX(5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(0deg);
+  }
+}
+
+.polaroid-reveal {
+  animation: polaroid-reveal 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
+             float-gentle 4s ease-in-out 0.8s infinite;
+}
+
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* ============================================
+   PAPER POP ANIMATION (kept for compatibility)
+   ============================================ */
+.paper-pop {
+  animation: paper-pop 700ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes paper-pop {
+  0% {
+    transform: translateY(20%) rotateX(15deg) scale(0.95);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-6%) rotateX(6deg) scale(1.02);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) rotateX(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+.paper-float {
+  animation: paper-float 6s ease-in-out infinite alternate;
+}
+
+@keyframes paper-float {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-6px);
+  }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+.delayed {
+  transition-delay: var(--delay, 0ms);
+}
+
+/* Photo-box / Polaroid styling (legacy support) */
+.photo-box {
+  --rot: 0deg;
+  display: inline-block;
+  background: var(--color-card, #fff);
+  padding: 0.5rem 0.5rem 0.75rem;
+  border-radius: 8px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  transform: rotate(var(--rot));
+  transition: transform 220ms ease, box-shadow 220ms ease;
+  width: calc(100% - 1rem);
+  max-width: 100%;
+}
+
+.photo-box:hover {
+  transform: translateY(-6px) rotate(var(--rot));
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+}
+
+.photo-box .photo-frame {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 6px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.01));
+}
+
+.photo-box .photo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ============================================
+   CONFETTI ANIMATION
+   ============================================ */
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@keyframes balloon-float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh) rotate(15deg);
+    opacity: 0;
+  }
+}
+
+@keyframes balloonRise {
+  0% {
+    transform: translateY(100vh) rotate(0deg) scale(0.5);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(80vh) rotate(-3deg) scale(1);
+  }
+  30% {
+    transform: translateY(50vh) rotate(5deg) scale(1);
+  }
+  50% {
+    transform: translateY(30vh) rotate(-3deg) scale(1);
+  }
+  70% {
+    transform: translateY(10vh) rotate(4deg) scale(1);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-30vh) rotate(0deg) scale(1);
+    opacity: 0;
+  }
+}
+
+.animate-confetti-fall {
+  animation: confetti-fall 4s ease-out forwards;
+}
+
+.animate-balloon-float {
+  animation: balloon-float 6s ease-out forwards;
+}
+
+.balloon-item {
+  will-change: transform, opacity;
+}
+
+/* ============================================
+   CANDLE FLAME ANIMATIONS
+   ============================================ */
+@keyframes flame-flicker {
+  0%, 100% { 
+    transform: scale(1, 1) translateY(0) skewX(0deg); 
+    opacity: 0.9; 
+  }
+  20% { 
+    transform: scale(1.08, 1.15) translateY(-2px) skewX(-2deg); 
+    opacity: 0.95; 
+  }
+  40% { 
+    transform: scale(0.95, 0.92) translateY(1px) skewX(2deg); 
+    opacity: 0.85; 
+  }
+  60% { 
+    transform: scale(1.05, 1.08) translateY(-1px) skewX(-1deg); 
+    opacity: 0.9; 
+  }
+  80% { 
+    transform: scale(0.98, 0.96) translateY(0px) skewX(1deg); 
+    opacity: 0.88; 
+  }
+}
+
+@keyframes flame-dance {
+  0%, 100% { 
+    transform: translateY(0) skewX(0deg); 
+    opacity: 1; 
+  }
+  25% { 
+    transform: translateY(-3px) skewX(-3deg); 
+    opacity: 0.95; 
+  }
+  50% { 
+    transform: translateY(-1px) skewX(2deg); 
+    opacity: 0.9; 
+  }
+  75% { 
+    transform: translateY(-2px) skewX(-1deg); 
+    opacity: 0.95; 
+  }
+}
+
+@keyframes flame-core {
+  0%, 100% { 
+    transform: translate(-50%, -50%) scale(1); 
+    opacity: 1; 
+  }
+  50% { 
+    transform: translate(-50%, -50%) scale(1.2); 
+    opacity: 0.8; 
+  }
+}
+
+@keyframes smoke-rise {
+  0% { 
+    transform: translate(-50%, 0) scale(0.5); 
+    opacity: 0.6; 
+  }
+  100% { 
+    transform: translate(-50%, -30px) scale(1.5) rotate(10deg); 
+    opacity: 0; 
+  }
+}
+
+/* Legacy flicker animations */
+@keyframes flicker {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(1.05) translateY(-1px);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(0.95) translateY(1px);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(1.02) translateY(-0.5px);
+    opacity: 0.95;
+  }
+}
+
+@keyframes flicker-inner {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+}
+
+@keyframes smoke {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-20px) scale(2);
+    opacity: 0;
+  }
+}
+
+.animate-flame-flicker {
+  animation: flame-flicker 0.15s ease-in-out infinite;
+}
+
+.animate-flame-dance {
+  animation: flame-dance 0.2s ease-in-out infinite;
+}
+
+.animate-flame-core {
+  animation: flame-core 0.3s ease-in-out infinite;
+}
+
+.animate-smoke-rise {
+  animation: smoke-rise 1.5s ease-out forwards;
+}
+
+.animate-flicker {
+  animation: flicker 0.3s ease-in-out infinite;
+}
+
+.animate-flicker-inner {
+  animation: flicker-inner 0.2s ease-in-out infinite;
+}
+
+.animate-smoke {
+  animation: smoke 1.5s ease-out forwards;
+}
+
+/* ============================================
+   TYPING CURSOR & TEXT ANIMATIONS
+   ============================================ */
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
