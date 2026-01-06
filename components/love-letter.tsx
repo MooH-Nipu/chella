@@ -46,12 +46,11 @@ export function LoveLetter({ onContinue }: LoveLetterProps) {
   const [currentParagraph, setCurrentParagraph] = useState(0)
 
   const paragraphs = [
-    { text: "My Dearest,", isItalic: true, delay: 0 },
-    { text: "On this special day, I wanted to take a moment to tell you just how much you mean to me. Words can never fully capture what I feel, but I will try anyway.", delay: 500 },
-    { text: "You are the sunshine that brightens my darkest days, the laughter that echoes in my heart, and the peace I find when the world feels chaotic. Every moment with you is a gift I treasure.", delay: 0 },
-    { text: "Your smile has the power to make everything better. Your kindness inspires me to be a better person. Your presence in my life is something I will never take for granted.", delay: 0 },
-    { text: "I hope this year brings you all the happiness, love, and success you deserve. May all your dreams come true, and may you always know how incredibly special you are.", delay: 0 },
-    { text: "Happy Birthday, my love. Here is to celebrating you today and always.", delay: 0 },
+    { text: "This is Apang writing. I'm not really great at expressing what I feel, but here goes.", isItalic: true, delay: 0 },
+    { text: "Happy birthday, Chelaaa! I hope this 20th birthday brings you more joy and laughter from everyone close to you. I just want to thank you for everything since the first time we met. Thank you for the matcha you gave me :)", delay: 500 },
+    { text: "I mean, I'm really glad that I met you. I can't say too much in this letter, and sorry I just made you this simple web for now. Seriously, we need to meet.", delay: 0 },
+    { text: "Semoga makin pinter, makin sayang keluarga, semoga cepet dapet tempat magang yang oke. Doa yang baik-baik buat kamu semuanya.", delay: 0 },
+    { text: "And I hope we can be more in the future. Wish you all the best.", delay: 0 },
   ]
 
   const { displayedText, isComplete } = useTypingEffect(
@@ -116,9 +115,9 @@ export function LoveLetter({ onContinue }: LoveLetterProps) {
                 {/* Signature - shows after all paragraphs */}
                 {allComplete && (
                   <p className="text-right text-sm text-muted-foreground pt-4 animate-fade-in">
-                    Forever yours,
+                    From,
                     <br />
-                    <span className="text-foreground">[Your Name]</span>
+                    <span className="text-foreground">Codename Apang</span>
                   </p>
                 )}
               </div>
