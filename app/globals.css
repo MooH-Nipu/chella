@@ -41,7 +41,8 @@
 }
 
 @theme inline {
-  --font-sans: "Geist", "Geist Fallback";
+  --font-sans: var(--font-lora), serif;
+  --font-heading: var(--font-crimson), serif;
   --font-mono: "Geist Mono", "Geist Mono Fallback";
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -87,5 +88,9 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-lora), serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-crimson), serif;
   }
 }

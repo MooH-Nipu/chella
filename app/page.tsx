@@ -2,10 +2,12 @@
 
 import { useState, useEffect } from "react"
 import { CountdownReveal } from "@/components/countdown-reveal"
+import { IntroSection } from "@/components/intro-section"
 import { BirthdayContent } from "@/components/birthday-content"
 
 export default function BirthdayPage() {
   const [isRevealed, setIsRevealed] = useState(false)
+  const [showIntro, setShowIntro] = useState(false)
   const [mounted, setMounted] = useState(false)
   const [targetDate, setTargetDate] = useState<Date | null>(null)
 
@@ -34,8 +36,10 @@ export default function BirthdayPage() {
 
   return (
     <main className="min-h-screen bg-background">
-      {!isRevealed ? (
-        <CountdownReveal targetDate={targetDate} onReveal={() => setIsRevealed(true)} />
+      {!showIntro && !isRevealed ? (
+        <CountdownReveal targetDate={targetDate} onReveal={() => setShowIntro(true)} />
+      ) : showIntro && !isRevealed ? (
+        <IntroSection onComplete={() => setIsRevealed(true)} />
       ) : (
         <BirthdayContent />
       )}
