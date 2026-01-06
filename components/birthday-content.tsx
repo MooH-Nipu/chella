@@ -9,7 +9,6 @@ import { SpotifySection } from "@/components/spotify-section"
 import { FinalSection } from "@/components/final-section"
 import { BirthdayCake } from "@/components/birthday-cake"
 import { Confetti } from "@/components/confetti"
-import { MusicToggle } from "@/components/music-toggle"
 
 export function BirthdayContent() {
   const [currentSection, setCurrentSection] = useState(0)
@@ -76,23 +75,6 @@ export function BirthdayContent() {
     <div className="min-h-screen overflow-hidden">
       {/* Confetti overlay */}
       <Confetti isActive={showConfetti} />
-      
-      {/* Music toggle button */}
-      <MusicToggle />
-
-      {/* Skip button (temporary for testing) */}
-      <button
-        onClick={() => {
-          const next = currentSection + 1
-          if (next < sections.length) {
-            setMaxUnlocked((m) => Math.max(m, next))
-            goToSection(next)
-          }
-        }}
-        className="fixed top-6 right-6 z-50 px-4 py-2 bg-primary text-primary-foreground rounded-md text-sm hover:opacity-80 transition-opacity"
-      >
-        Skip →
-      </button>
 
       <div
         className={`transition-all duration-500 ease-in-out transform ${
