@@ -47,7 +47,7 @@ export function SpotifySection({ onContinue }: SpotifySectionProps) {
 
           {/* QR Code - Takes 1 column */}
           <Card className="bg-card p-6 border border-border flex flex-col items-center justify-center">
-            <p className="text-sm text-muted-foreground mb-4 text-center">Scan to open in Spotify</p>
+            <p className="text-sm text-muted-foreground mb-3 text-center">Scan to open the playlist 🎧</p>
             <div className="bg-white p-3 rounded-lg shadow-sm">
               <img
                 src={qrCodeUrl}
@@ -57,9 +57,6 @@ export function SpotifySection({ onContinue }: SpotifySectionProps) {
                 className="rounded"
               />
             </div>
-            <p className="text-xs text-muted-foreground mt-4 text-center">
-              Or open the app and search for the playlist
-            </p>
           </Card>
         </div>
 

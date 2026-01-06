@@ -23,14 +23,10 @@ interface Photo {
 export function PhotoCollage({ onContinue }: PhotoCollageProps) {
   const [revealedPhotos, setRevealedPhotos] = useState<number[]>([])
   const [photos, setPhotos] = useState<Photo[]>([
-    { src: "/photo1.jpg", caption: "Our first date" },
-    { src: "/photo2.jpg", caption: "That sunset together" },
-    { src: "/photo3.jpg", caption: "Your beautiful smile" },
-    { src: "/photo4.jpg", caption: "Adventures with you" },
-    { src: "/photo5.jpg", caption: "Laughing together" },
-    { src: "/photo6.jpg", caption: "My favorite person" },
-    { src: "/photo7.jpg", caption: "Our special moment" },
-    { src: "/photo8.jpg", caption: "Forever with you" },
+    { src: "/photo1.jpeg", caption: "Om Om and Tante Tante" },
+    { src: "/photo2.jpeg", caption: "First Date?" },
+    { src: "/photo3.jpeg", caption: "Omaaa Kospleyy" },
+    { src: "/photo4.jpeg", caption: "Tenxi Enjoyer" },
   ])
 
   // Generate random positions on mount
@@ -78,7 +74,7 @@ export function PhotoCollage({ onContinue }: PhotoCollageProps) {
         </div>
 
         {/* Scattered Photos Layout - Random positioning */}
-        <div className="relative w-full h-[600px] md:h-[700px] mb-12">
+        <div className="relative w-full h-[450px] md:h-[500px] mb-8">
           {photos.map((photo, i) => {
             const revealed = revealedPhotos.includes(i)
             // Don't render until positions are generated
@@ -87,7 +83,7 @@ export function PhotoCollage({ onContinue }: PhotoCollageProps) {
             return (
               <div 
                 key={i} 
-                className="absolute w-40 h-48 md:w-52 md:h-64 cursor-pointer perspective z-10 hover:z-50 transition-all duration-300"
+                className="absolute w-44 h-52 md:w-64 md:h-80 cursor-pointer perspective z-10 hover:z-50 transition-all duration-300"
                 onClick={() => handleReveal(i)}
                 style={{
                   top: photo.position.top,
@@ -155,8 +151,8 @@ export function PhotoCollage({ onContinue }: PhotoCollageProps) {
           })}
         </div>
 
-        <p className="text-center text-xs text-muted-foreground mb-6">
-          {revealedPhotos.length} of {photos.length} memories revealed
+        <p className="text-center text-lg text-foreground/80 italic mb-6">
+          We should take more photos together 📸✨
         </p>
 
         {revealedPhotos.length === photos.length && (

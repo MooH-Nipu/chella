@@ -10,7 +10,11 @@ const _quicksand = Quicksand({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Happy Birthday! 🎂",
   description: "A special birthday surprise just for you",
-    generator: 'v0.app'
+  generator: 'v0.app',
+  icons: {
+    icon: '/favicon.svg',
+    apple: '/logo.svg',
+  },
 }
 
 export default function RootLayout({

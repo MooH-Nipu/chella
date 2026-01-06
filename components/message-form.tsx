@@ -89,9 +89,6 @@ export function MessageForm({ onSent }: MessageFormProps) {
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-            Your Message <span className="text-primary">*</span>
-          </label>
           <textarea
             id="message"
             value={message}
@@ -100,6 +97,7 @@ export function MessageForm({ onSent }: MessageFormProps) {
             rows={5}
             required
             className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all resize-none"
+            aria-label="Message"
           />
         </div>
 

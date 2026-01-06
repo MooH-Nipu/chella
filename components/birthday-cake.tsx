@@ -244,24 +244,9 @@ export function BirthdayCake({ onContinue, onBlowCandles }: BirthdayCakeProps) {
           </div>
         </div>
 
-        {/* Blow all button */}
-        {!allBlown && candlesLit.some(c => c) && (
-          <Button 
-            onClick={blowAllCandles} 
-            variant="outline" 
-            size="lg" 
-            className="mb-4 bg-transparent"
-          >
-            ✨ Blow All Candles
-          </Button>
-        )}
-
         {/* Continue after blowing */}
         {showMessage && (
           <div className="animate-fade-in space-y-4">
-            <p className="text-lg text-foreground font-medium">
-              Now let's see what surprises await you!
-            </p>
             <Button onClick={onContinue} size="lg" className="px-8">
               Continue
               <ArrowRight className="w-4 h-4 ml-2" />
